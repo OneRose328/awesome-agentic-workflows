@@ -1,0 +1,46 @@
+﻿name: Validate Template Library
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Validate template structure
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          mapfile -t files < <(find templates -type f -name "*.md" | sort)
+          if [ "${#files[@]}" -eq 0 ]; then
+            echo "No templates found under templates/"
+            exit 1
+          fi
+
+          required=(
+            "## Purpose"
+            "## Trigger"
+            "## Instructions"
+            "## Expected Output"
+            "## Customization Notes"
+          )
+
+          for file in "${files[@]}"; do
+            grep -q '^---$' "$file" || { echo "Missing frontmatter delimiter in $file"; exit 1; }
+            grep -q '^on:' "$file" || { echo "Missing on: in $file"; exit 1; }
+            grep -q '^permissions:' "$file" || { echo "Missing permissions: in $file"; exit 1; }
+            grep -q '^tools:' "$file" || { echo "Missing tools: in $file"; exit 1; }
+            for heading in "${required[@]}"; do
+              grep -q "^${heading}$" "$file" || { echo "Missing ${heading} in $file"; exit 1; }
+            done
+          done
+
+          echo "Validated ${#files[@]} template files."
+
