@@ -212,16 +212,6 @@ For current behavior, re-check these official references before making compatibi
 - [Creating Agentic Workflows](https://github.github.com/gh-aw/setup/creating-workflows/)
 - [Workflow Structure](https://github.github.com/gh-aw/reference/workflow-structure/)
 
-## Versioning And Updates
-
-This repository is meant to be maintained, not dumped once and abandoned.
-
-- `PATCH` releases fix wording, docs, and compatibility details without materially changing the template catalog.
-- `MINOR` releases add templates or meaningfully expand existing workflows.
-- `MAJOR` releases reflect breaking changes in structure or compatibility assumptions.
-- When GitHub Agentic Workflows changes, verify the current official docs first, then note the compatibility update in [CHANGELOG.md](CHANGELOG.md) and reflect it in the next release notes.
-- Before updating templates already in use, update the source `.md`, re-run `gh aw validate --dir templates/<category>` from the repository root, and recompile any affected example workflows before merging.
-
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for the authoring checklist, structure rules, and validation expectations.
