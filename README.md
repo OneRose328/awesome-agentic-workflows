@@ -141,6 +141,12 @@ Because this repository is a library. `templates/` is the catalog of reusable so
 | [Auto Assign Reviewer](templates/pr-automation/auto-assign-reviewer.md) | auto-assign-reviewer.md | Recommends the primary reviewer lane and explains why that lane should own first review. |
 | [Breaking Change Detector](templates/pr-automation/breaking-change-detector.md) | breaking-change-detector.md | Flags contract or behavior changes that may break downstream users. |
 
+### Related Tools & Resources
+
+| Tool | Description |
+| --- | --- |
+| [PR Quality Gate](https://github.com/CreativeCodingSolutions/pr-quality-gate) | Free GitHub Action to enforce PR quality standards on every pull request. Checks description length, labels, and linked issues automatically. |
+
 ### Release Management
 
 | Template | File | Description |
