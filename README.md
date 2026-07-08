@@ -212,6 +212,12 @@ For current behavior, re-check these official references before making compatibi
 - [Creating Agentic Workflows](https://github.github.com/gh-aw/setup/creating-workflows/)
 - [Workflow Structure](https://github.github.com/gh-aw/reference/workflow-structure/)
 
+## Related Tools
+
+| Tool | Description |
+| --- | --- |
+| [llm-box](https://github.com/alib8b8/llm-box) | Terminal-first workflow automation engine with MCP server mode. Generate and execute YAML workflows from plain English descriptions. Features 20+ built-in nodes, 15+ LLM providers, and supports stdio and HTTP MCP modes. |
+
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for the authoring checklist, structure rules, and validation expectations.
